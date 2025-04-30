@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestões ou Reclamações - FinanWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilização do Formulário */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização dos Grupos do Formulário */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Botão Enviar */
+.cta-button-cadastro {
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    align-self: flex-start;
+    font-size: 1.2em;
+    width: auto;
+}
+
+/* Efeito de Hover no Botão */
+.cta-button-cadastro:hover {
+    background-color: #333;
+}
+
+/* Melhorando a Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .feedback-form {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1.1em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Espaço extra para não cobrir o conteúdo com o cabeçalho fixo -->
+    <div class="header-spacer"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">FinanWise</a>
+            <ul>
+                <li><a href="index.html#conheca-nosso-site">Conheça Nosso Site</a></li>
+                <li><a href="index.html#sobre-nos">Sobre Nós</a></li>
+                <li><a href="index.html#contato">Suporte</a></li>
+            </ul>
+            <a href="#" class="cta-button-cadastro">Faça o cadastro aqui</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="text-section">
+            <h1>Envie suas <span class="highlight">Sugestões</span> ou <span class="highlight">Reclamações</span></h1>
+            <p>
+                Seu feedback é muito importante para nós! Se você tiver alguma sugestão ou reclamação, 
+                por favor, preencha o formulário abaixo. Estamos sempre dispostos a ouvir você e melhorar 
+                nossos serviços.
+            </p>
+        </div>
+    </div>
+
+    <section class="info-text" id="sugestoes-reclamacoes">
+        <div class="info-content">
+            <div class="text-part">
+                <h2>Formulário de Sugestões e Reclamações</h2>
+                <p>Por favor, preencha o formulário com seus dados e sua mensagem. Vamos analisar com carinho e buscar a melhor solução para o seu caso.</p>
+                
+                <form action="#" method="POST" class="feedback-form">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua sugestão ou reclamação" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button-cadastro">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="trabalhe_conosco.html">Trabalhe Conosco</a>
+            <a href="index.html#rec_ou_sug">Sugestões ou Reclamações</a>
+        </div>
+    </footer>
+</body>
+</html>
