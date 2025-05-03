@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Executa
         if ($stmt->execute()) {
-            echo "<script>alert('Cadastro realizado com sucesso!'); window.location.href='cadastro.html';</script>";
+            echo "<script>alert('Cadastro realizado com sucesso!'); window.location.href='login.html';</script>";
         } else {
             echo "Erro ao cadastrar: " . $stmt->error;
         }
