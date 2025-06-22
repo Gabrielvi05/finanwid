@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - FinanWise</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <style>
+        /* [CSS IGUAL AO ORIGINAL] */
+        header {
+            background-color: white;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #dff348;
+            bottom: -10px;
+            left: 0;
+        }
+
+        .form-section {
+            width: 100%;
+            max-width: 600px;
+            margin: 120px auto 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .form-group label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input {
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #dff348;
+            outline: none;
+        }
+
+        .cta-button-entrar {
+            background-color: black;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1.2em;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button-entrar:hover {
+            background-color: #333;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 38px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="{{ url('/') }}" class="logo">FinanWise</a>
+    </header>
+
+    <div class="container">
+        <div class="text-section">
+            <h1>Faça seu <span class="highlight">Login</span></h1>
+            <p>Preencha o formulário abaixo para acessar o seu controle financeiro.</p>
+        </div>
+        <div class="form-section">
+            <form id="loginForm" action="{{ route('login.post') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" value="{{ old('email') }}" required>
+                    @error('email')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="password" required>
+                    <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+                    @error('password')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
+                </div>
+                <button type="submit" class="cta-button-entrar">Entrar</button>
+                @if(session('erro'))
+                    <span class="error-message" id="loginError">{{ session('erro') }}</span>
+                @endif
+            </form>
+            <div class="forgot-password">
+                <a href="#" onclick="recuperarSenha()">Esqueceu a senha?</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="{{ url('/trabalhe-conosco') }}">Trabalhe Conosco</a>
+            <a href="{{ url('/sugestoes') }}">Sugestões ou Reclamações</a>
+        </div>
+    </footer>
+
+    <script>
+        function togglePassword() {
+            const senhaInput = document.getElementById("senha");
+            senhaInput.type = senhaInput.type === "password" ? "text" : "password";
+        }
+
+        function recuperarSenha() {
+            let email = prompt("Digite seu e-mail para recuperar a senha:");
+            if (email && email.includes("@")) {
+                alert("Um link de recuperação foi enviado para " + email);
+            } else {
+                alert("Digite um e-mail válido.");
+            }
+        }
+    </script>
+</body>
+</html>
