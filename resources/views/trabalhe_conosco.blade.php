@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -55,6 +56,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header-spacer"></div>
 
@@ -85,8 +87,11 @@
         <div class="info-content">
             <div class="text-part">
                 <h2>Por que trabalhar na <span class="highlight">FinanWise?</span></h2>
-                <p>Na FinanWise, acreditamos que um bom ambiente de trabalho é a chave para o sucesso. Oferecemos uma cultura inclusiva, colaborativa e inovadora, onde todos têm espaço para crescer, aprender e impactar diretamente os nossos usuários.</p>
-                <p><strong>Se você busca desenvolvimento profissional, desafios empolgantes e a chance de trabalhar com uma equipe talentosa,</strong> aqui é o seu lugar!</p>
+                <p>Na FinanWise, acreditamos que um bom ambiente de trabalho é a chave para o sucesso. Oferecemos uma
+                    cultura inclusiva, colaborativa e inovadora, onde todos têm espaço para crescer, aprender e impactar
+                    diretamente os nossos usuários.</p>
+                <p><strong>Se você busca desenvolvimento profissional, desafios empolgantes e a chance de trabalhar com
+                        uma equipe talentosa,</strong> aqui é o seu lugar!</p>
             </div>
         </div>
     </section>
@@ -97,29 +102,30 @@
         <div class="vagas-list">
             <div class="vaga-item">
                 <h3>Desenvolvedor Front-end</h3>
-                <p>Responsável pela criação e manutenção da interface do usuário. É necessário ter experiência com HTML, CSS, JavaScript e frameworks modernos de front-end.</p>
+                <p>Responsável pela criação e manutenção da interface do usuário. É necessário ter experiência com HTML,
+                    CSS, JavaScript e frameworks modernos de front-end.</p>
             </div>
             <div class="vaga-item">
                 <h3>Desenvolvedor Back-end</h3>
-                <p>Focado no desenvolvimento da lógica e integração do sistema. É necessário ter experiência com linguagens como Java, Node.js, Python e banco de dados relacionais.</p>
+                <p>Focado no desenvolvimento da lógica e integração do sistema. É necessário ter experiência com
+                    linguagens como Java, Node.js, Python e banco de dados relacionais.</p>
             </div>
             <div class="vaga-item">
                 <h3>Designer UX/UI</h3>
-                <p>Criar experiências intuitivas para os usuários da nossa plataforma. É necessário ter experiência com ferramentas de design e prototipação, além de uma forte visão de usabilidade.</p>
+                <p>Criar experiências intuitivas para os usuários da nossa plataforma. É necessário ter experiência com
+                    ferramentas de design e prototipação, além de uma forte visão de usabilidade.</p>
             </div>
         </div>
     </section>
 
     <section class="info-text" id="enviar-curriculo">
         <h2>Como Enviar Seu Currículo</h2>
-        <p>Para se candidatar, envie seu currículo atualizado para o nosso e-mail <strong>recrutamento@controlefinanceiro.com</strong>. Não se esqueça de incluir uma breve carta de apresentação!</p>
+        <p>Para se candidatar, envie seu currículo atualizado para o nosso e-mail
+            <strong>recrutamento@controlefinanceiro.com</strong>. Não se esqueça de incluir uma breve carta de
+            apresentação!</p>
     </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="{{ url('/') }}#trabalhe-conosco">Trabalhe Conosco</a>
-            <a href="{{ url('/sugestoes') }}">Sugestões ou Reclamações</a>
-        </div>
-    </footer>
+    <x-footer-links />
 </body>
+
 </html>

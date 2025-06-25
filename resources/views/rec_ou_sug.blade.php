@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,6 +99,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header-spacer"></div>
 
@@ -125,8 +127,8 @@
         <div class="text-section">
             <h1>Envie suas <span class="highlight">Sugestões</span> ou <span class="highlight">Reclamações</span></h1>
             <p>
-                Seu feedback é muito importante para nós! Se você tiver alguma sugestão ou reclamação, 
-                por favor, preencha o formulário abaixo. Estamos sempre dispostos a ouvir você e melhorar 
+                Seu feedback é muito importante para nós! Se você tiver alguma sugestão ou reclamação,
+                por favor, preencha o formulário abaixo. Estamos sempre dispostos a ouvir você e melhorar
                 nossos serviços.
             </p>
         </div>
@@ -136,27 +138,31 @@
         <div class="info-content">
             <div class="text-part">
                 <h2>Formulário de Sugestões e Reclamações</h2>
-                <p>Por favor, preencha o formulário com seus dados e sua mensagem. Vamos analisar com carinho e buscar a melhor solução para o seu caso.</p>
+                <p>Por favor, preencha o formulário com seus dados e sua mensagem. Vamos analisar com carinho e buscar a
+                    melhor solução para o seu caso.</p>
 
                 <form action="{{ route('sugestoes.enviar') }}" method="POST" class="feedback-form">
                     @csrf
                     <div class="form-group">
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required value="{{ old('nome') }}">
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required
+                            value="{{ old('nome') }}">
                         @error('nome')
                             <div class="error-text">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Seu email" required value="{{ old('email') }}">
+                        <input type="email" id="email" name="email" placeholder="Seu email" required
+                            value="{{ old('email') }}">
                         @error('email')
                             <div class="error-text">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua sugestão ou reclamação" required>{{ old('mensagem') }}</textarea>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua sugestão ou reclamação"
+                            required>{{ old('mensagem') }}</textarea>
                         @error('mensagem')
                             <div class="error-text">{{ $message }}</div>
                         @enderror
@@ -167,11 +173,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="{{ route('trabalhe') }}">Trabalhe Conosco</a>
-            <a href="{{ route('sugestoes') }}">Sugestões ou Reclamações</a>
-        </div>
-    </footer>
+    <x-footer-links />
 </body>
+
 </html>

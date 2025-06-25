@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,17 +16,20 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .form-group {
             display: flex;
             flex-direction: column;
             margin-bottom: 20px;
             position: relative;
         }
+
         .form-group label {
             font-size: 1.1em;
             margin-bottom: 5px;
             color: #333;
         }
+
         .form-group input {
             padding: 12px;
             font-size: 1em;
@@ -34,16 +38,19 @@
             background-color: #fff;
             transition: border-color 0.3s;
         }
+
         .form-group input:focus {
             border-color: #dff348;
             outline: none;
         }
+
         /* Estilo para mensagens de erro do backend */
         .error-message {
             color: red;
             font-size: 0.9em;
             margin-top: 5px;
         }
+
         /* Estilo para mensagens de erro do JS (frontend) */
         .error-js {
             color: red;
@@ -51,6 +58,7 @@
             margin-top: 5px;
             display: none;
         }
+
         .cta-button-entrar {
             background-color: black;
             color: white;
@@ -63,9 +71,11 @@
             cursor: pointer;
             border: none;
         }
+
         .cta-button-entrar:hover {
             background-color: #333;
         }
+
         header {
             background-color: white;
             padding: 0 20px;
@@ -80,6 +90,7 @@
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .logo {
             font-size: 2.5em;
             font-weight: bold;
@@ -92,8 +103,9 @@
             position: relative;
             display: inline-block;
         }
+
         .logo::after {
-            content: ''; 
+            content: '';
             position: absolute;
             width: 100%;
             height: 3px;
@@ -101,6 +113,7 @@
             bottom: -10px;
             left: 0;
         }
+
         .toggle-password {
             position: absolute;
             right: 10px;
@@ -112,6 +125,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header-spacer"></div>
 
@@ -122,18 +136,20 @@
     <div class="container" style="padding-top: 120px;">
         <div class="text-section">
             <h1>Cadastro de Cliente</h1>
-            <p>Preencha o formulário abaixo para se cadastrar e começar a utilizar nosso sistema de controle financeiro.</p>
+            <p>Preencha o formulário abaixo para se cadastrar e começar a utilizar nosso sistema de controle financeiro.
+            </p>
         </div>
 
         {{-- Exibir erros gerais em bloco, se houver --}}
         @if ($errors->any())
-        <div class="alert alert-danger" style="max-width:600px; margin: 20px auto; padding: 15px; border-radius: 5px; background-color:#f8d7da; color:#842029; border:1px solid #f5c2c7;">
-            <ul style="list-style:none; padding-left:0; margin:0;">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+            <div class="alert alert-danger"
+                style="max-width:600px; margin: 20px auto; padding: 15px; border-radius: 5px; background-color:#f8d7da; color:#842029; border:1px solid #f5c2c7;">
+                <ul style="list-style:none; padding-left:0; margin:0;">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         @endif
 
         <div class="form-section">
@@ -160,7 +176,8 @@
 
                 <div class="form-group">
                     <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" value="{{ old('telefone') }}" required placeholder="(XX) XXXXX-XXXX">
+                    <input type="tel" id="telefone" name="telefone" value="{{ old('telefone') }}" required
+                        placeholder="(XX) XXXXX-XXXX">
                     @error('telefone')
                         <p class="error-message">{{ $message }}</p>
                     @enderror
@@ -188,7 +205,7 @@
     </div>
 
     <script>
-        document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+        document.getElementById("cadastroForm").addEventListener("submit", function (event) {
             let valid = true;
 
             const nome = document.getElementById("nome").value.trim();
@@ -230,4 +247,5 @@
         }
     </script>
 </body>
+
 </html>
